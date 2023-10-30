@@ -4,7 +4,6 @@ import {
   registerController,
   forgetPasswordController,
 } from "../controllers/authController.js";
-import { Validation } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 // register user

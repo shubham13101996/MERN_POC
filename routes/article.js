@@ -1,9 +1,9 @@
 import express from "express";
 import User from "../models/userModel.js";
 
-import Article from "../models/article";
-import { checkAuth } from "../middleware/checkAuth";
-import { stripe } from "../utils/stripe";
+import Article from "../models/article.js";
+import { checkAuth } from "../middleware/checkAuth.js";
+import { stripe } from "../utils/stripe.js";
 
 const router = express.Router();
 
@@ -24,7 +24,6 @@ router.get("/", checkAuth, async (req, res) => {
 
   if (!subscriptions.data.length) return res.json([]);
 
-  
   const plan = subscriptions.data[0].plan.nickname;
 
   if (plan === "Basic") {
